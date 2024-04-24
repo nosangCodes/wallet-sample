@@ -1,17 +1,20 @@
 .custom-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &.btc {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
     background-image: linear-gradient(0deg, #ff8f17 0%, #ffc743 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  &.dollar {
+    background-image: linear-gradient(0deg, #fa23a2 0%, #ff677c 100%);
+  }
 
-    .icon {
-      height: 16px;
-      width: 16px;
-      color: #fafafa;
-    }
+  .icon {
+    height: 16px;
+    width: 16px;
+    color: #fafafa;
   }
 }

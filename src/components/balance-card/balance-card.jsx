@@ -1,13 +1,13 @@
 import { ChevronDown } from "lucide-react";
-import BtcIcon from "../../custom-icon/btc-icon";
 import styles from "./balance-card.module.scss";
+import CustomIcon from "../../custom-icon/custom-icon";
 
 export default function BalanceCard() {
   return (
     <div className={styles.container}>
       <div className={styles.head}>
         <div className={styles.info}>
-          <BtcIcon />
+          <CustomIcon variant="btc" />
           <h5>Bitcoin</h5>
         </div>
         <h5>BTC</h5>

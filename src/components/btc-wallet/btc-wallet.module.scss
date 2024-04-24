@@ -1,6 +1,6 @@
 .container {
-  width: 300px;
-  height: calc(100vh - 120px);
+  width: 350px;
+  height: calc(100vh - 4rem);
   border: 1px solid #968888;
   border-radius: 1.2rem;
   margin: 2rem;
@@ -8,4 +8,13 @@
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 767px) {
+    width: calc(100vw - 4rem); // Adjust the margin value based on your design
+    margin: 2rem 2rem; // Adjust margins as needed
+  }
+  @media (max-width: 440px) {
+    width: calc(100vw - 4rem); // Adjust the margin value based on your design
+    margin: 2rem 2rem; // Adjust margins as needed
+  }
 }
