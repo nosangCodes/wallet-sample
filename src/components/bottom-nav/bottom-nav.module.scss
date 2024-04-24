@@ -1,0 +1,20 @@
+.container {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  bottom: 0;
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  .bottom-nav-icon {
+    color: #aeb8c4;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .bottom-nav-icon.active {
+    color: #4c5968;
+  }
+}
