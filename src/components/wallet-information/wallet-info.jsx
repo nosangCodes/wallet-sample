@@ -1,0 +1,13 @@
+import React from "react";
+import styles from "./wallet-info.module.scss";
+import BalanceCard from "../balance-card/balance-card";
+import BtcStats from "../btc-stats/btc-stats";
+
+export default function WalletInfo() {
+  return (
+    <div className={styles["container"]}>
+      <BalanceCard />
+      <BtcStats/>
+    </div>
+  );
+}

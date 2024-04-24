@@ -1,0 +1,17 @@
+.custom-icon {
+  &.btc {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: linear-gradient(0deg, #ff8f17 0%, #ffc743 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      height: 16px;
+      width: 16px;
+      color: #fafafa;
+    }
+  }
+}
