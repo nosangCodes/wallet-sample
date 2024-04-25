@@ -1,6 +1,7 @@
-import { ChevronDown } from "lucide-react";
 import styles from "./balance-card.module.scss";
 import CustomIcon from "../../custom-icon/custom-icon";
+import ExtendCard from "../extend-card/extend-card";
+import ActionCard from "../acrion-card/action-card";
 
 export default function BalanceCard() {
   return (
@@ -22,9 +23,15 @@ export default function BalanceCard() {
         <div>-2.32%</div>
       </div>
 
-      <div className={styles["toggle-action"]}>
+      {/* <div className={styles["toggle-action"]}>
         <ChevronDown className={styles.icon} />
-      </div>
+      </div> */}
+      <ExtendCard>
+        <div style={{ display: "flex", marginTop: "10px", columnGap: "10px" }}>
+          <ActionCard variant="buy" />
+          <ActionCard variant="sell" />
+        </div>
+      </ExtendCard>
     </div>
   );
 }

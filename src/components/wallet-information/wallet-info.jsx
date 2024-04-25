@@ -9,10 +9,10 @@ export default function WalletInfo() {
     <div className={styles["container"]}>
       <BalanceCard />
       <BtcStats />
-      <div className={styles.actions}>
+      {/* <div className={styles.actions}>
         <ActionCard variant="buy" />
         <ActionCard variant="sell" />
-      </div>
+      </div> */}
     </div>
   );
 }
