@@ -1,5 +1,5 @@
 import React from "react";
-import { Line, LineChart, ResponsiveContainer } from "recharts";
+import { Dot, Line, LineChart, ResponsiveContainer } from "recharts";
 
 export default function ChartView({ data, dataKey }) {
   return (
@@ -9,11 +9,28 @@ export default function ChartView({ data, dataKey }) {
           <Line
             type="monotone"
             dataKey={dataKey}
-            stroke="#8884d8"
-            strokeWidth={2}
+            stroke="#ffc743"
+            strokeWidth={4}
+            dot={<CustomDot isStart={true} length={data?.length} />}
           />
         </LineChart>
       </ResponsiveContainer>
     </div>
   );
 }
+
+const CustomDot = ({ cx, cy, stroke, isStart, index, length }) => {
+  if (index === length - 1) {
+    return (
+      <Dot
+        cx={cx - 2}
+        cy={cy}
+        r={5}
+        stroke={stroke}
+        strokeWidth={2}
+        fill="#ffc743"
+      />
+    );
+  }
+  return null;
+};

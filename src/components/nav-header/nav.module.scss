@@ -12,5 +12,9 @@
 
   .nav-icon {
     color: #6e6868;
+    transition: 200ms color ease-in;
+  }
+  .nav-icon:hover{
+    color: #5a5454;
   }
 }

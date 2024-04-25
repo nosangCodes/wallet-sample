@@ -14,12 +14,8 @@ export default function ExtendCard({
   };
 
   useEffect(() => {
-    console.log("🚀 ~ useEffect ~ ref:", ref.current);
     if (ref.current) {
       setContentHeight(ref.current.clientHeight + 10);
-      console.log(
-        ref.current.clientHeight
-      );
     }
   }, [children, ref]);
 
