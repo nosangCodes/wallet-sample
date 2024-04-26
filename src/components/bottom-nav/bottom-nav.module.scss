@@ -9,12 +9,14 @@
 
   .bottom-nav-icon {
     color: #aeb8c4;
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
     cursor: pointer;
-  }
+    transition: color 200ms ease-in;
 
-  .bottom-nav-icon.active {
-    color: #4c5968;
+    &.active,
+    &:hover {
+      color: #4c5968;
+    }
   }
 }

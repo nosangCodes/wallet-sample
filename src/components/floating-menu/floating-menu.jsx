@@ -1,47 +1,48 @@
-import { useState, useEffect, useRef } from "react";
-import { EllipsisVertical } from "lucide-react";
+import { Edit, EllipsisVertical } from "lucide-react";
 import styles from "./floating-menu.module.scss";
+import { useRef, useState } from "react";
 
 export default function FloatingMenu({
   trigger = <EllipsisVertical />,
+  anchor = "bottom-left",
   children,
 }) {
+  // anchor = "bottom-left" | "bottom-right";
   const triggerRef = useRef(null);
-  const menuRef = useRef(null);
-  const [menuVisible, setMenuVisible] = useState(false);
-  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    if (triggerRef.current && menuRef.current) {
-      const { top, left } = triggerRef.current.getBoundingClientRect();
-      const triggerWidth = triggerRef.current.offsetWidth;
-      const menuWidth = menuRef.current.offsetWidth;
-
-      const newLeft = left + triggerWidth / 2 - menuWidth / 2;
-      const newTop = top + triggerRef.current.offsetHeight;
-
-      setMenuPosition({ top: newTop, left: newLeft });
-    }
-  }, [menuVisible]);
-
-  const toggleMenu = () => {
-    setMenuVisible((prev) => !prev);
+  const anchors = {
+    "bottom-left": {
+      top: 0,
+      right: 14,
+    },
+    "bottom-right": {
+      top: 0,
+      left: 14,
+    },
   };
 
   return (
-    <div className={styles.container}>
-      <div ref={triggerRef} className={styles.trigger} onClick={toggleMenu}>
+    <div>
+      <div
+        onClick={() => setOpen(true)}
+        ref={triggerRef}
+        className={styles.trigger}
+      >
         {trigger}
       </div>
-      {menuVisible && (
-        <div
-          ref={menuRef}
-          className={styles.menu}
-          style={{ top: menuPosition.top, left: menuPosition.left }}
-        >
-          {children}
+      <div
+        className={`${styles["menu-content"]} ${
+          open ? styles.show : styles.hide
+        }`}
+      >
+        <div onClick={() => setOpen(false)} className={styles.overlay} />
+        <div className={styles.content}>
+          <div style={anchors[anchor]} className={styles.menu}>
+            {children}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
