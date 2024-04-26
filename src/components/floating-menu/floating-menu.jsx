@@ -1,4 +1,4 @@
-import { Edit, EllipsisVertical } from "lucide-react";
+import { EllipsisVertical } from "lucide-react";
 import styles from "./floating-menu.module.scss";
 import { useRef, useState } from "react";
 
