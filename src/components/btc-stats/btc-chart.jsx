@@ -13,7 +13,7 @@ export default function BtcChart({ style }) {
         <HighLowValue value={data?.highest} />
       </div>
       <ChartView dataKey={dataKey} data={data?.data} />
-      <Coinvalue label={"1BTC=$5.483"} />
+      <Coinvalue label={"1BTC = $5.483"} />
     </div>
   );
 }
